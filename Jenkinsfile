@@ -12,7 +12,7 @@ pipeline {
                 stage('Test') {
                     steps {
                         echo 'Verifying index.html has a valid heading...'
-                        sh 'grep -q "<h1>" index.html'
+                        sh 'grep -iq "<h1[^>]*>" index.html'
                     }
                 }
 
